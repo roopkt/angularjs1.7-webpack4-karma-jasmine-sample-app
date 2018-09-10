@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const appDir = path.resolve(__dirname, './src');
 const ENV = process.env.NODE_ENV || 'development'
+const isDev = ENV === 'development'
 const webpackConfigEntryPoints = {
   app: './index.ts'
 }
@@ -27,8 +28,8 @@ const webpackConfigLoaders = [
     use: ['base64-inline-loader'],
     exclude: [/node_modules/]
   },
- 
-  
+
+
   // HTML
   {
     test: /\.html$/,
@@ -39,8 +40,8 @@ const webpackConfigLoaders = [
 
 const webpackConfigPlugins = [
   new HtmlWebpackPlugin({
-    favicon:'favicon.ico',
-    template: 'index.html',
+    favicon: 'favicon.ico',
+    template: isDev ? 'index.html' : 'build/index.html',
     inject: 'body',
     hash: true,
     env: ENV,
@@ -57,12 +58,12 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.html']
   },
-  watch: true,
+  watch: isDev ? true : false,
   module: {
     rules: webpackConfigLoaders
   },
   plugins: webpackConfigPlugins,
-  devServer:{
-    contentBase:'src'
+  devServer: {
+    contentBase: 'src'
   }
 }
