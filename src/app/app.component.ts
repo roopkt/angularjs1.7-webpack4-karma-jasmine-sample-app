@@ -6,5 +6,5 @@ export let AppComponent = {
     template:template,
     componentName: 'clApp',
     $routeConfig:routes
+};
 
-}

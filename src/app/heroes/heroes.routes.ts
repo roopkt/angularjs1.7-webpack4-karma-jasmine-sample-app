@@ -5,8 +5,7 @@ export const routes = [
     {
         path: '/',
         name: 'HeroList',
-        component: HeroListComponent.componentName
-        ,
+        component: HeroListComponent.componentName,
         useAsDefault: true
     },
     {
@@ -14,4 +13,5 @@ export const routes = [
         name: 'HeroDetail',
         component:HeroDetailComponent.componentName
     }
-]
+];
+

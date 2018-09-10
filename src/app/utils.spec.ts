@@ -1,10 +1,18 @@
 import { createModule } from "./utils";
 
-describe('utils',()=>{
-    it('can create angular module', ()=>{
-      const module =  createModule({
-name :'testmodule'
+describe('utils', () => {
+    let mymodule: ng.IModule;
+    beforeEach(() => {
+        mymodule = createModule({
+            name: 'testmodule'
         });
-        expect(module).toBeDefined();
-    })
+    });
+
+    it('can create angular module', () => {
+        expect(mymodule).toBeDefined();
+    });
+
+    it('has correct module name', () => {
+        expect(mymodule.name).toBe('testmodule')
+    });
 })

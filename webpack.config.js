@@ -18,17 +18,17 @@ const webpackConfigLoaders = [
   {
     test: /\.css$/,
     loader: 'style-loader!css-loader',
-    include: [
-
-    ]
+    exclude: [/node_modules/],
   },
 
   // images/fonts
   {
-    test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-    use: ['base64-inline-loader']
+    test: /\.(jpe?g|png|ttf|eot|ico|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+    use: ['base64-inline-loader'],
+    exclude: [/node_modules/]
   },
-
+ 
+  
   // HTML
   {
     test: /\.html$/,
@@ -39,6 +39,7 @@ const webpackConfigLoaders = [
 
 const webpackConfigPlugins = [
   new HtmlWebpackPlugin({
+    favicon:'favicon.ico',
     template: 'index.html',
     inject: 'body',
     hash: true,
@@ -60,5 +61,8 @@ module.exports = {
   module: {
     rules: webpackConfigLoaders
   },
-  plugins: webpackConfigPlugins
+  plugins: webpackConfigPlugins,
+  devServer:{
+    contentBase:'src'
+  }
 }

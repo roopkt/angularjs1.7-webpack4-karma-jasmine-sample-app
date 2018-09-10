@@ -6,5 +6,6 @@ export const routes = [
         path: '/heroes/',
         name: 'Heroes',
         component: HeroesComponent.componentName,
+        useAsDefault: true
     },
 ]
