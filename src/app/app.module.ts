@@ -17,7 +17,7 @@ export const appModule = createModule(
     }
 )
     .config(['$locationProvider',
-        ($locationProvider: ng.ILocationProvider) => $locationProvider.html5Mode(true)
+        ($locationProvider: ng.ILocationProvider) => $locationProvider.html5Mode(false)
     ])
     .value('$routerRootComponent',
         AppComponent.componentName);

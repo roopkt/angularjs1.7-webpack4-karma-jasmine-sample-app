@@ -1,20 +1,20 @@
 import { HeroService } from "../hero.service";
 
 class HeroListController {
-    static $inject = ['heroService'];
+    static $inject = [HeroService.serviceName];
     public heroes: Hero[];
-   
+
     constructor(private heroService: HeroService) {
-       
+
     }
 
-    $routerOnActivate () {
-       this
-        .heroService
-        .getHeroes()
-        .subscribe(data => {
-            this.heroes = data;
-        });
+    $routerOnActivate() {
+        this
+            .heroService
+            .getHeroes()
+            .subscribe(data => {
+                this.heroes = data;
+            });
     }
     isSelected(id: number) {
         return true;

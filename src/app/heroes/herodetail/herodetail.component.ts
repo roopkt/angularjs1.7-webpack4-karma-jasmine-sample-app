@@ -20,4 +20,5 @@ export let HeroDetailComponent = {
     controller: HeroDetailController,
     template,
     componentName: 'clHeroDetail',
+    bindings: { $router: '<' },
 }

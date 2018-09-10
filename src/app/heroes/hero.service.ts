@@ -1,7 +1,7 @@
 import { of } from 'rxjs'
 
 export class HeroService {
-    static serviceName: 'heroService';
+    static serviceName = 'heroService';
     static heroes: Hero[] = [
         { id: 11, name: 'Mr. Nice' },
         { id: 12, name: 'Narco' },
