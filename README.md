@@ -1,5 +1,6 @@
 # Welcome to AngularJS sample App
-This project is created to demonstrate angularjs sample application below are the libraries and toolsets used.
+This project is created to demonstrate angularjs sample application below are the libraries and toolsets used. Checkout app live at  https://roopkt.github.io/angularjs1.7-webpack4-karma-jasmine-sample-app/ 
+
 - jQuery
 - Bootstrap CSS
 - AngularJS 1.7
